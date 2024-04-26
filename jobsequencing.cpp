@@ -48,6 +48,20 @@ int jobsequencing(vector<Job> &arr, int n)
 
 int main()
 {
-    vector<Job> arr = {{1, 5, 100}, {2, 3, 10}, {3, 3, 13}, {4, 4, 15}, {5, 3, 12}, {6, 2, 9}, {7, 7, 105}};
+    int n;
+    cout << "Enter number of Jobs to schedule : ";
+    cin >> n;
+    vector<Job> arr;
+    for (int i = 0; i < n; i++)
+    {
+        int profit;
+        int deadline;
+        cout << "Enter Deadline of Job " << i + 1 << " : ";
+        cin >> deadline;
+        cout << "Enter Profit of Job " << i + 1 << " : ";
+        cin >> profit;
+        arr.push_back({i + 1, deadline, profit});
+    }
+    // vector<Job> arr = {{1, 5, 100}, {2, 3, 10}, {3, 3, 13}, {4, 4, 15}, {5, 3, 12}, {6, 2, 9}, {7, 7, 105}};
     cout << jobsequencing(arr, arr.size());
 }
