@@ -15,8 +15,8 @@ bool selectionsort(vector<int> &arr)
             {
                 minimum = j;
             }
-            swap(arr[minimum], arr[i]);
         }
+        swap(arr[minimum], arr[i]);
     }
 }
 

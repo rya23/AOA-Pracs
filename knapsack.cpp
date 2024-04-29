@@ -14,7 +14,7 @@ int knapsack(vector<int> weight, vector<int> profit, int maximumweight, int size
     {
         for (int j = 1; j < maximumweight + 1; j++)
         {
-             if (weight[i] <= j)
+            if (weight[i] <= j)
                 table[i][j] = max(table[i - 1][j], table[i - 1][j - weight[i]] + profit[i]);
             else
                 table[i][j] = table[i - 1][j];
@@ -28,7 +28,7 @@ int knapsack(vector<int> weight, vector<int> profit, int maximumweight, int size
         }
         cout << endl;
     }
-    return table[size][maximumweight];
+    return table[size - 1][maximumweight];
 }
 
 int main()
@@ -38,5 +38,6 @@ int main()
     int size = profit.size();
     int maximumweight = 5;
 
-    cout << knapsack(weight, profit, maximumweight, size);
+    cout << "hello\n"
+         << knapsack(weight, profit, maximumweight, size);
 }
